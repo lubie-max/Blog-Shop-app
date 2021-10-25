@@ -1,0 +1,17 @@
+{% extends 'index.html' %}
+
+{% block body %}
+<div class="container">
+
+{% for product in allproducts %}
+    <li>{{product.title}}</li>
+    <li><img src="{{product.productImg}}" alt="">  {{product.productImg}}</li>
+    <li>{{product.desc}}</li>
+    <li>{{product.categary}}</li>
+    <li>{{product.subcategary}}</li>
+    <li>{{product.price}}</li>
+   
+   {% endfor %} 
+</div>
+
+{% endblock body %}

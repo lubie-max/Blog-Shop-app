@@ -1,0 +1,22 @@
+{% extends 'index.html' %}
+
+{% block title %}blogpost{% endblock title %}
+
+{% block body %}
+
+<div class="container-sm border border-dark">
+    <h1 class="text-center my-3">
+    {{blogs.title}}
+    </h1>
+    <div class="container-sm text-center my-4">
+
+        <img class="shadow-lg p-3 mb-5 bg-body rounded" src="/media/{{blogs.postImg}}" alt="{{blogs.slug}}" style="height: 500px; width:400;">
+
+    </div>
+<div class="text-center my-4">
+    <p>{{blogs.content|safe}}</p>
+
+</div>
+</div>
+
+{% endblock body %}

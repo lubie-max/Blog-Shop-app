@@ -1,0 +1,49 @@
+{% extends "index.html" %}
+
+{% block title %}
+home  
+{% endblock title %}
+
+{% block activeHome %}
+  active
+{% endblock activeHome %}
+
+{% block body %}
+
+<div class="container">
+{% for product in allproducts %}
+  
+  <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="/media/{{0.productImg}}" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="..." class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="..." class="d-block w-100" alt="...">
+      </div>
+    </div>
+  </div>
+{% endfor %}
+
+</div>
+
+<div class="container" style="justify-content: center;">
+
+  <div class="row col-md-12">
+    {% for product in allproducts %}
+
+        <div class="col-md-2 my-3">
+            <div class="image-container">
+               <a><img src="/media/{{product.productImg}}" class="rounded" alt="{{product.Name}}" id="productImg" style="height: 200px; width: 200px;"></a>
+            </div>
+            <span>{{ product.Name }}</span>
+        </div>
+    {% endfor %}
+</div>
+
+</div>
+  
+{% endblock body %}

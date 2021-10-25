@@ -1,0 +1,43 @@
+{% extends 'index.html' %}
+
+{% block title %}blog{% endblock title %}
+
+{% block activeBlog %}active{% endblock activeBlog %}
+{% block body %}
+
+    {% for post in blogposts %}
+<div class="container-sm text-center" style="justify-content: right; display:flex;" >
+
+    <div class="card my-1" style="width: 50rem;" >
+        <a href="/blog/blog/blogpost/{{post.slug}}" class="text-dark" style="content: icon;">  
+        <div class="card-header">
+         {{post.pubDate}}
+        </div>
+        <div class="container-fluid">
+            <style>
+                #postImg {
+                    height: 500px;
+                    width: 700px;
+                    display: inline;
+                    viewport-fit:inherit;
+                    content: normal;
+   
+                }
+            </style>
+<img src="/media/{{post.postImg}}" class="img-thumbnail my-2" alt="post-img" id='postImg'>
+    </div>
+        <div class="card-body">
+          <h5 class="card-title">{{post.title}}</h5>
+          <p class="card-text">{{post.subContent}}</p>
+          <a href="blogpost/{{post.slug}}" class="btn btn-primary">Read More</a>
+        </div>
+      </div>
+    </a>
+</div>
+<div class="span">
+
+    <p>&nbsp;</p>
+</div>
+{% endfor %}
+
+{% endblock body%}
